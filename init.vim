@@ -11,6 +11,9 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
  Plug 'Lenovsky/nuake'
  Plug 'kyazdani42/nvim-web-devicons'
  Plug 'mechatroner/rainbow_csv'
+ Plug 'ckipp01/nvim-jenkinsfile-linter'
+ Plug 'nvim-lua/plenary.nvim'
+ Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 set nocompatible            " disable compatibility to old-time vi
@@ -85,6 +88,8 @@ nnoremap <F4> :Nuake<CR>
 inoremap <F4> <C-\><C-n>:Nuake<CR>
 tnoremap <F4> <C-\><C-n>:Nuake<CR>
 
+" show buffer numbered list"
+:nnoremap <F5> :buffers<CR>:buffer<Space> 
 " Clear search mapping 
 nmap <silent> <space> <space>:nohlsearch<CR>:match<CR>:diffupdate<CR>
 nnoremap <nowait><silent> <C-C> :noh<CR>
@@ -102,7 +107,7 @@ endif
 
 "set shell=C:\\WINDOWS\\sysnative\\WindowsPowerShell\\v1.0\\powershell.exe
 "set shell=C:\\Windows\\System32\\WindowsPowerShel\\v1.0\\powershell.exe
-"set shell=powershell
+set shell=powershell
 
 noremap <F12> <Esc>:syntax sync fromstart<CR>
 inoremap <F12> <C-o>:syntax sync fromstart<CR>
